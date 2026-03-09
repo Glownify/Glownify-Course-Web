@@ -76,6 +76,7 @@ const TrainerDashboard = () => {
   const { dashboardData, loading, error } = useSelector(
     (state) => state.dashboard,
   );
+  const { user } = useSelector((state) => state.auth);
 
   useEffect(() => {
     dispatch(fetchDashboardDataThunk());
@@ -89,7 +90,7 @@ const TrainerDashboard = () => {
       <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4 mb-8">
         <div>
           <h1 className="text-2xl font-bold text-gray-900">
-            Welcome back, Ravi Kumar
+            Welcome back, {user?.name || "Trainer"}!
           </h1>
           <p className="text-gray-500 text-sm">
             Here's what's happening with your courses.

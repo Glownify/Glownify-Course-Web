@@ -19,7 +19,7 @@ export const fetchTrainerApplicationsThunk = createAsyncThunk(
     async (_, _thunkAPI) => {
         try {
             const response = await api.get("/submitted-applications/trainer");
-            console.log("Fetched Trainer Applications:", response.data);
+            // console.log("Fetched Trainer Applications:", response.data);
             return response.data;
         } catch (error) {
             return handleAxiosError(error, _thunkAPI);
@@ -32,7 +32,7 @@ export const fetchStudentApplicationsThunk = createAsyncThunk(
     async (_, _thunkAPI) => {
         try {
             const response = await api.get("/submitted-applications/student");
-            console.log("Fetched Student Applications:", response.data);
+            // console.log("Fetched Student Applications:", response.data);
             return response.data;
         } catch (error) {
             return handleAxiosError(error, _thunkAPI);

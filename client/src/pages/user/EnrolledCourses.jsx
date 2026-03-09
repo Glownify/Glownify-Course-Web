@@ -12,6 +12,8 @@ const EnrolledCourses = () => {
     dispatch(fetchStudentApplicationsThunk());
   }, [dispatch]);
 
+  console.log("EnrolledCourses - Applications:", application); // Debug log
+
   return (
     <div className="bg-gray-50 p-6 mt-20 min-h-screen">
       <h1 className="text-2xl font-bold mb-6">My Enrolled Courses</h1>
@@ -42,9 +44,9 @@ const EnrolledCourses = () => {
                 {/* Title */}
                 <h2 className="text-lg font-semibold">{course?.title}</h2>
 
-                {/* Category */}
+                {/* Application ID */}
                 <p className="text-xs text-gray-500 mt-1">
-                  Category: {course?.category?.name}
+                  ApplicationID: {app?.applicationId}
                 </p>
 
                 {/* Description */}

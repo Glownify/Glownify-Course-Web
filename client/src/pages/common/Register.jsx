@@ -8,9 +8,11 @@ const Register = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    password:"",
     phone: "",
     city: "",
     profession: "",
+    role: "",
   });
 
   const handleSubmit = async (e) => {
@@ -19,9 +21,11 @@ const Register = () => {
   if (
     !formData.name ||
     !formData.email ||
+      !formData.password ||
     !formData.phone ||
     !formData.city ||
-    !formData.profession
+    !formData.profession ||
+    !formData.role
   ) {
     toast.error("Please fill all fields");
     return;
@@ -39,9 +43,11 @@ const Register = () => {
       setFormData({
         name: "",
         email: "",
+        password: "",
         phone: "",
         city: "",
         profession: "",
+        role: "",
       });
 
     } else {
@@ -154,6 +160,19 @@ const Register = () => {
               />
             </div>
 
+              <div>
+              <label className="text-sm font-medium">Password</label>
+              <input
+                type="password"
+                className="mt-1 w-full border rounded-lg px-3 py-2 focus:ring-2 focus:ring-teal-500 outline-none"
+                placeholder="Enter your password"
+                name="password"
+                value={formData.password}
+                onChange={handleChange}
+                required
+              />
+            </div>
+
             <div>
               <label className="text-sm font-medium">Phone Number</label>
               <input
@@ -192,6 +211,21 @@ const Register = () => {
                 <option>Beautician</option>
                 <option>Makeup Artist</option>
                 <option>Training Academies</option>
+              </select>
+            </div>
+
+            <div>
+              <label className="text-sm font-medium">Role</label>
+              <select
+                className="mt-1 w-full border rounded-lg px-3 py-2 focus:ring-2 focus:ring-teal-500 outline-none"
+                value={formData.role}
+                onChange={handleChange}
+                name="role"
+                required
+              >
+                <option value="">Select your role</option>
+                <option value="student">Student</option>
+                <option value="trainer">Course Seller</option>
               </select>
             </div>
 
