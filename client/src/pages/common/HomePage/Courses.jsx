@@ -94,6 +94,7 @@ const Courses = () => {
                 mode={course.mode}
                 price={course.price}
                 category={course.category?.name}
+                duration={course.duration}
               />
             </SwiperSlide>
           ))}
@@ -105,7 +106,7 @@ const Courses = () => {
 
 export default Courses;
 
-const CourseCard = ({ id, poster, title, trainerName, price, category }) => {
+const CourseCard = ({ id, poster, title, trainerName, price, category, duration }) => {
   return (
     <Link
       to={`/courses/${id}`}
@@ -135,7 +136,7 @@ const CourseCard = ({ id, poster, title, trainerName, price, category }) => {
               </span>
             </div>
             {/* Optional: Add duration/days like in image */}
-            <span className="text-[10px] sm:text-xs text-gray-400">4 Hours</span>
+            <span className="text-[10px] sm:text-xs text-gray-400">{duration}</span>
           </div>
 
           <button className="w-full bg-[#26A9C0] hover:bg-[#1f8a9d] text-white py-2 rounded-lg text-xs sm:text-sm font-bold flex items-center justify-center gap-1 transition-colors">
